@@ -1,0 +1,21 @@
+<!DOCTYPE html >
+<!--ng-app directive  -->
+<html lang="en" ng-app="mymodule">
+
+<head>
+  <title>Mr.Das NonNinja AngularJS Application</title>
+   <script src="app/angular.min.js"></script>
+   <script src="js/module.js"></script>
+</head>
+<body ng-controller="mycontroller">
+ 
+<div>FName:{{employee.fname}}</div>
+<div>LName:{{employee.lname}}</div>
+<div>Gender:{{employee.gender}}</div>
+<div>Name:{{details.name}}</div>
+<div>Gender:{{details.gender}}</div>
+<div>Phto:</div>
+<img ng-src="{{details.photo}}" alt="{{details.name}}+ 'My Name'" style="height: 150px;width:200px"></img>
+</body>
+
+</html>
