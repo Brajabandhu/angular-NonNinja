@@ -4,18 +4,60 @@
 
 <head>
   <title>Mr.Das NonNinja AngularJS Application</title>
-   <script src="app/angular.min.js"></script>
-   <script src="js/module.js"></script>
+  <script src="app/angular.min.js"></script>
+  <script src="js/module.js"></script>
 </head>
+
 <body ng-controller="mycontroller">
- 
-<div>FName:{{employee.fname}}</div>
-<div>LName:{{employee.lname}}</div>
-<div>Gender:{{employee.gender}}</div>
-<div>Name:{{details.name}}</div>
-<div>Gender:{{details.gender}}</div>
-<div>Phto:</div>
-<img ng-src="{{details.photo}}" alt="{{details.name  + ' My Photo'}}" style="height: 150px;width:200px"></img>
+  <div>Phto:</div>
+  <img ng-src="{{details.photo}}" alt="{{details.name  + ' My Photo'}}" style="height: 150px;width:200px"></img>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <td>FName</td>
+          <td>LName</td>
+          <td>Gender</td>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in employees">
+          <td>{{employee.fname}}</td>
+          <td>{{employee.lname}}</td>
+          <td>{{employee.gender}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Likes</th>
+          <th>Dislikes</th>
+          <th>Likes/DisLikes</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="tech in technologies">
+          <td>{{tech.name}}</td>
+          <td>{{tech.likes}}</td>
+          <td>{{tech.dislikes}}</td>
+          <td>
+            <input type="button" value="Likes" ng-click="likes(tech)" />
+            <input type="button" value="DisLikes" ng-click="dislikes(tech)" />
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </body>
+              
 
 </html>
