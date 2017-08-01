@@ -9,7 +9,7 @@
 </head>
 
 <body ng-controller="mycontroller">
-  <div>Phto:</div>
+  <div>It's me...</div>
   <img ng-src="{{details.photo}}" alt="{{details.name  + ' My Photo'}}" style="height: 150px;width:200px"></img>
 
   <div>
@@ -32,6 +32,7 @@
       </tbody>
     </table>
   </div>
+  </br></br>
   <div>
    Number of Rows to Display: <input type="number" min="0" max="5" step="1" ng-model="rowlimit" />
     <table>
@@ -58,6 +59,36 @@
       </tbody>
     </table>
   </div>
+</br></br>
+  <div>
+   Order By: <select ng-model="sortBy">
+     <option value="fname"> FName By ASC</option>
+     <option value="-lname"> LName By Desc</option>
+     <option value="gender"> Gender By ASC</option>
+     <option value="-salary"> Salary By Desc</option>
+   </select>
+    <table>
+      <thead>
+        <tr>
+          <td>FName</td>
+          <td>LName</td>
+          <td>Gender</td>
+          <td>Salary</td>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in  sortingData | orderBy:sortBy"/>
+          <td>{{employee.fname}}</td>
+          <td>{{employee.lname}}</td>
+          <td>{{employee.gender}}</td>
+          <td>{{employee.salary}}</td>
+
+        </tr>
+</tbody>
+    </table>
+  </div>
+
 </body>
               
 

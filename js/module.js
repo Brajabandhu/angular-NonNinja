@@ -8,6 +8,13 @@ var employees=[
 {fname:"braja",lname: "Das",gender:"male"    },
 {fname:"braj",lname: "Das",gender:"male"    }
 ];
+var sortingData=[
+{fname:"brajabandhu",lname: "Dasu",gender:"male",salary:52347    },
+{fname:"pappu",lname: "Das",gender:"female" ,salary:49888  },
+{fname:"braja",lname: "Dase",gender:"male" ,salary:324893   },
+{fname:"braj",lname: "Dasa",gender:"female"  ,salary:48999  }
+];
+
 var technologies=[
 {name:"java",likes:0,dislikes:0},
 {name:"Spring",likes:0,dislikes:0},
@@ -24,6 +31,8 @@ var details={
  $scope.details=details;
 $scope.employees=employees; 
 $scope.technologies=technologies; 
+$scope.sortingData=sortingData;
+$scope.sortBy="fname"
 $scope.likes=function(tech){
     tech.likes++;
 } 
