@@ -33,6 +33,7 @@
     </table>
   </div>
   <div>
+   Number of Rows to Display: <input type="number" min="0" max="5" step="1" ng-model="rowlimit" />
     <table>
       <thead>
         <tr>
@@ -44,7 +45,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="tech in technologies">
+        <tr ng-repeat="tech in technologies | limitTo:rowlimit:1">
           <td>{{tech.name}}</td>
           <td>{{tech.likes}}</td>
           <td>{{tech.dislikes}}</td>

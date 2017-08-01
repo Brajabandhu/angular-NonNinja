@@ -30,5 +30,5 @@ $scope.likes=function(tech){
 $scope.dislikes=function(tech){
     tech.dislikes++;
 } 
-
+$scope.rowlimit=3;
 });
