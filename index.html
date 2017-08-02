@@ -6,6 +6,8 @@
   <title>Mr.Das NonNinja AngularJS Application</title>
   <script src="app/angular.min.js"></script>
   <script src="js/module.js"></script>
+  <script src="js/filters.js"></script>
+  
 </head>
 
 <body ng-controller="mycontroller">
@@ -13,12 +15,15 @@
   <img ng-src="{{details.photo}}" alt="{{details.name  + ' My Photo'}}" style="height: 150px;width:200px"></img>
 
   <div>
+    <!-- <input type="checkbox"ng-model="hide">Hide Gender -->
+     <input type="checkbox"ng-model="hide">Show Gender
     <table>
       <thead>
         <tr>
           <td>FName</td>
           <td>LName</td>
-          <td>Gender</td>
+          <!-- <td ng-hide="hide">Gender</td> -->
+           <td ng-show="hide">Gender</td>
 
         </tr>
       </thead>
@@ -26,7 +31,8 @@
         <tr ng-repeat="employee in employees">
           <td>{{employee.fname}}</td>
           <td>{{employee.lname}}</td>
-          <td>{{employee.gender}}</td>
+           <!-- <td ng-hide="hide">{{employee.gender}}</td> -->
+          <td ng-show="hide">{{employee.gender}}</td>
 
         </tr>
       </tbody>
@@ -88,7 +94,31 @@
 </tbody>
     </table>
   </div>
+  </br></br>
+<div>
+  <p>Using custom filter gender...
+     <table>
+      <thead>
+        <tr>
+          <td>FName</td>
+          <td>LName</td>
+          <td>Gender</td>
+          <td>Salary</td>
 
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="employee in  customFilter "/>
+
+          <td>{{employee.fname}}</td>
+          <td>{{employee.lname}}</td>
+          <td>{{employee.gender| gender}}</td>
+          <td>{{employee.salary}}</td>
+
+        </tr>
+</tbody>
+    </table>
+  </div>
 </body>
               
 
